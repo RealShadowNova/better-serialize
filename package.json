@@ -31,7 +31,7 @@
     "@commitlint/config-conventional": "^17.6.6",
     "@favware/cliff-jumper": "^2.1.1",
     "@favware/npm-deprecate": "^1.0.7",
-    "@joshdb/eslint-config": "1.1.0-next.d7d912b.0",
+    "@joshdb/eslint-config": "1.1.0-next.f8eeab5.0",
     "@joshdb/ts-config": "1.1.0-next.a699598.0",
     "@types/node": "^18.16.19",
     "@types/rimraf": "^3.0.2",
