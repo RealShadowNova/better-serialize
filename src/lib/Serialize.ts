@@ -12,23 +12,39 @@ export namespace Serialize {
    * @returns The JSON-compatible format of the raw Node.js data type.
    */
   export function toJsonCompatible(data: unknown): JsonCompatible {
-    if (isObject(data)) return { [Keying.Type]: Type.Object, [Keying.Value]: toJsonCompatibleObject(data) };
-    else if (typeof data === 'string') return { [Keying.Type]: Type.String, [Keying.Value]: data };
-    else if (typeof data === 'number') {
-      if (Number.isNaN(data)) return { [Keying.Type]: Type.Number, [Keying.Value]: 'NaN' };
-      if ([Infinity, -Infinity].includes(data)) return { [Keying.Type]: Type.Number, [Keying.Value]: String(data) };
+    if (isObject(data)) {
+      return { [Keying.Type]: Type.Object, [Keying.Value]: toJsonCompatibleObject(data) };
+    } else if (typeof data === 'string') {
+      return { [Keying.Type]: Type.String, [Keying.Value]: data };
+    } else if (typeof data === 'number') {
+      if (Number.isNaN(data)) {
+        return { [Keying.Type]: Type.Number, [Keying.Value]: 'NaN' };
+      }
+
+      if ([Infinity, -Infinity].includes(data)) {
+        return { [Keying.Type]: Type.Number, [Keying.Value]: String(data) };
+      }
 
       return { [Keying.Type]: Type.Number, [Keying.Value]: data };
-    } else if (typeof data === 'boolean') return { [Keying.Type]: Type.Boolean, [Keying.Value]: data };
-    else if (Array.isArray(data)) return { [Keying.Type]: Type.Array, [Keying.Value]: toJsonCompatibleArray(data) };
-    else if (data === null) return { [Keying.Type]: Type.Null };
-    else if (data instanceof Date) return { [Keying.Type]: Type.Date, [Keying.Value]: data.toJSON() };
-    else if (data === undefined) return { [Keying.Type]: Type.Undefined };
-    else if (typeof data === 'bigint') return { [Keying.Type]: Type.BigInt, [Keying.Value]: data.toString() };
-    else if (data instanceof RegExp) {
+    } else if (typeof data === 'boolean') {
+      return { [Keying.Type]: Type.Boolean, [Keying.Value]: data };
+    } else if (Array.isArray(data)) {
+      return { [Keying.Type]: Type.Array, [Keying.Value]: toJsonCompatibleArray(data) };
+    } else if (data === null) {
+      return { [Keying.Type]: Type.Null };
+    } else if (data instanceof Date) {
+      return { [Keying.Type]: Type.Date, [Keying.Value]: data.toJSON() };
+    } else if (data === undefined) {
+      return { [Keying.Type]: Type.Undefined };
+    } else if (typeof data === 'bigint') {
+      return { [Keying.Type]: Type.BigInt, [Keying.Value]: data.toString() };
+    } else if (data instanceof RegExp) {
       return { [Keying.Type]: Type.RegExp, [Keying.Value]: { [Keying.Source]: data.source, [Keying.Flags]: data.flags } };
-    } else if (data instanceof Map) return { [Keying.Type]: Type.Map, [Keying.Value]: toJsonCompatibleEntries(Array.from(data)) };
-    else if (data instanceof Set) return { [Keying.Type]: Type.Set, [Keying.Value]: toJsonCompatibleArray(Array.from(data)) };
+    } else if (data instanceof Map) {
+      return { [Keying.Type]: Type.Map, [Keying.Value]: toJsonCompatibleEntries(Array.from(data)) };
+    } else if (data instanceof Set) {
+      return { [Keying.Type]: Type.Set, [Keying.Value]: toJsonCompatibleArray(Array.from(data)) };
+    }
 
     throw new TypeError(`Serialize received an unknown type while formatting: "${data.constructor.name}".`);
   }
@@ -36,7 +52,9 @@ export namespace Serialize {
   function toJsonCompatibleArray(array: unknown[]): JsonCompatible[] {
     const json: JsonCompatible[] = [];
 
-    for (const value of array) json.push(toJsonCompatible(value));
+    for (const value of array) {
+      json.push(toJsonCompatible(value));
+    }
 
     return json;
   }
@@ -44,7 +62,10 @@ export namespace Serialize {
   function toJsonCompatibleEntries(entries: [PropertyKey, unknown][]): [PropertyKey, JsonCompatible][] {
     const json: [PropertyKey, JsonCompatible][] = [];
 
-    for (const [key, value] of entries) json.push([key, toJsonCompatible(value)]);
+    for (const [key, value] of entries) {
+      json.push([key, toJsonCompatible(value)]);
+    }
+
     return json;
   }
 
@@ -89,7 +110,9 @@ export namespace Serialize {
         return null;
 
       case Type.Number:
-        if (typeof value === 'string') return Number(value);
+        if (typeof value === 'string') {
+          return Number(value);
+        }
 
         return value;
 
@@ -116,14 +139,20 @@ export namespace Serialize {
   function fromJsonCompatibleArray(json: JsonCompatible[]): unknown[] {
     const arr: unknown[] = [];
 
-    for (const value of json) arr.push(fromJsonCompatible(value));
+    for (const value of json) {
+      arr.push(fromJsonCompatible(value));
+    }
+
     return arr;
   }
 
   function fromJsonCompatibleMap(json: [PropertyKey, JsonCompatible][]): [PropertyKey, unknown][] {
     const arr: [PropertyKey, unknown][] = [];
 
-    for (const [key, value] of json) arr.push([key, fromJsonCompatible(value)]);
+    for (const [key, value] of json) {
+      arr.push([key, fromJsonCompatible(value)]);
+    }
+
     return arr;
   }
 
