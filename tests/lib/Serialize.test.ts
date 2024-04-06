@@ -426,7 +426,7 @@ describe('Serialize', () => {
 
     test('GIVEN unknown type THEN throws error', () => {
       expect(() => Serialize.toJsonCompatible(() => true)).toThrowError(
-        new TypeError('Serialize received an unknown type while formatting: "Function".')
+        new TypeError('Serialize.toJsonCompatible() received an unknown type while formatting: "Function".')
       );
     });
   });
@@ -936,7 +936,9 @@ describe('Serialize', () => {
 
     test('GIVEN unknown type THEN throws error', () => {
       // @ts-expect-error 2322 - Type 'function' is not assignable to type 'Serialize.Type'.
-      expect(() => Serialize.fromJsonCompatible({ [Serialize.Keying.Type]: 'function' })).toThrowError('Serialize received an unknown type.');
+      expect(() => Serialize.fromJsonCompatible({ [Serialize.Keying.Type]: 'function' })).toThrowError(
+        'Serialize.fromJsonCompatible() received an unknown type while parsing: "undefined" (function).'
+      );
     });
   });
 });
