@@ -10,7 +10,7 @@ export default defineConfig({
   minify: false,
   skipNodeModulesBundle: true,
   sourcemap: true,
-  target: 'es2021',
+  target: 'es2022',
   tsconfig: relative(__dirname, resolve(process.cwd(), 'src', 'tsconfig.json')),
   keepNames: true,
   treeshake: true
