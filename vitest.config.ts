@@ -6,10 +6,10 @@ export default defineConfig({
     coverage: {
       enabled: true,
       reporter: ['text', 'lcov', 'clover'],
-      exclude: ['**/node_modules/**', '**/dist/**', '**/tests/**']
+      exclude: ['**/node_modules/**', '**/dist/**', '**/tests/**', '**/.yarn/**']
     }
   },
   esbuild: {
-    target: 'es2021'
+    target: 'es2022'
   }
 });
