@@ -46,7 +46,7 @@ export namespace Serialize {
       return { [Keying.Type]: Type.Set, [Keying.Value]: toJsonCompatibleArray(Array.from(data)) };
     }
 
-    throw new TypeError(`Serialize received an unknown type while formatting: "${data.constructor.name}".`);
+    throw new TypeError(`Serialize.toJsonCompatible() received an unknown type while formatting: "${data.constructor.name}".`);
   }
 
   function toJsonCompatibleArray(array: unknown[]): JsonCompatible[] {
@@ -132,7 +132,7 @@ export namespace Serialize {
         return undefined;
 
       default:
-        throw new TypeError('Serialize received an unknown type.');
+        throw new TypeError(`Serialize.fromJsonCompatible() received an unknown type while parsing: "${value}" (${type}).`);
     }
   }
 
