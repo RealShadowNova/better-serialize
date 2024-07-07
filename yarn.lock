@@ -1024,12 +1024,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.14.9":
-  version: 20.14.9
-  resolution: "@types/node@npm:20.14.9"
+"@types/node@npm:^20.14.10":
+  version: 20.14.10
+  resolution: "@types/node@npm:20.14.10"
   dependencies:
     undici-types: ~5.26.4
-  checksum: 5e9eda1ac8c6cc6bcd1063903ae195eaede9aad1bdad00408a919409cfbcdd2d6535aa3d50346f0d385528f9e03dafc7d1b3bad25aedb1dcd79a6ad39d06c35d
+  checksum: 2f397d393de8cddb126e0b7999402ea450215ac69d49666ddef4f730a73325054499ce7345f86095e7b935c55b2e02139f3b8b9afc72fb978ed29edf6bb956b0
   languageName: node
   linkType: hard
 
@@ -1598,7 +1598,7 @@ __metadata:
     "@favware/npm-deprecate": ^1.0.7
     "@sapphire/eslint-config": ^5.0.5
     "@sapphire/ts-config": ^5.0.1
-    "@types/node": ^20.14.9
+    "@types/node": ^20.14.10
     "@types/rimraf": ^4.0.5
     "@typescript-eslint/eslint-plugin": ^7.15.0
     "@typescript-eslint/parser": ^7.15.0
@@ -1611,7 +1611,7 @@ __metadata:
     pinst: ^3.0.0
     prettier: ^3.3.2
     pretty-quick: ^4.0.0
-    rimraf: ^5.0.7
+    rimraf: ^5.0.8
     tsup: ^8.1.0
     typedoc: ^0.26.3
     typedoc-json-parser: ^10.1.5
@@ -4522,7 +4522,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:*, rimraf@npm:^5.0.7":
+"rimraf@npm:*":
   version: 5.0.7
   resolution: "rimraf@npm:5.0.7"
   dependencies:
@@ -4541,6 +4541,17 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^5.0.8":
+  version: 5.0.8
+  resolution: "rimraf@npm:5.0.8"
+  dependencies:
+    glob: ^10.3.7
+  bin:
+    rimraf: dist/esm/bin.mjs
+  checksum: 6d67ee92a3e2fef24e36c0763ebb5250d27f31f056a8a1e02d66e76578c16bdea00924438d73ec78270bca7c93b9da50cc2da6d9fcc24fbaef427870feac1ec0
   languageName: node
   linkType: hard
 
