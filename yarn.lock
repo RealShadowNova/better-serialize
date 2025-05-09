@@ -1862,7 +1862,7 @@ __metadata:
     "@typescript-eslint/parser": ^7.18.0
     "@vitest/coverage-v8": ^2.0.5
     eslint: ^8.57.0
-    eslint-config-prettier: ^9.1.0
+    eslint-config-prettier: ^10.1.5
     eslint-plugin-prettier: ^5.2.1
     husky: ^9.1.4
     lint-staged: ^15.2.9
@@ -2629,6 +2629,17 @@ __metadata:
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
   checksum: 98b48897d93060f2322108bf29db0feba7dd774be96cd069458d1453347b25ce8682ecc39859d4bca2203cc0ab19c237bcc71755eff49a0f8d90beadeeba5cc5
+  languageName: node
+  linkType: hard
+
+"eslint-config-prettier@npm:^10.1.5":
+  version: 10.1.5
+  resolution: "eslint-config-prettier@npm:10.1.5"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 6d8eb41c716fc2b073bfd9daede0c87c4c2b29055f15c94618eec00a19c5499024ddb89902d6793b5ac9102075e4739d7cc2d4d58c7e7ed4cc2dcf79e3fbcacc
   languageName: node
   linkType: hard
 
