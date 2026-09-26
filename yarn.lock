@@ -1288,12 +1288,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.16.0":
-  version: 20.16.0
-  resolution: "@types/node@npm:20.16.0"
+"@types/node@npm:^24.19.0":
+  version: 24.19.0
+  resolution: "@types/node@npm:24.19.0"
   dependencies:
-    undici-types: ~6.19.2
-  checksum: 789999d4fed820bc2a42aa04fbaaa1ce16d46ed2d1e5f73cc3574a092274ac02e1a71345e166b716b355b45a1c875ad32abaef8708a380c60c3fdb2215d05223
+    undici-types: ">=7.24.0 <7.24.7"
+  checksum: 17381039ae34c5a34fc78b28614c5ecc66bd7092df93a235ea74b77ffa313f0e757373d23f9567dfe7f1cdb52a94260583f7f654919ec086cf7fe19e60e30294
   languageName: node
   linkType: hard
 
@@ -1856,7 +1856,7 @@ __metadata:
     "@favware/npm-deprecate": ^1.0.7
     "@sapphire/eslint-config": ^5.0.5
     "@sapphire/ts-config": ^5.0.1
-    "@types/node": ^20.16.0
+    "@types/node": ^24.19.0
     "@types/rimraf": ^4.0.5
     "@typescript-eslint/eslint-plugin": ^7.18.0
     "@typescript-eslint/parser": ^7.18.0
@@ -5714,17 +5714,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:>=7.24.0 <7.24.7":
+  version: 7.24.6
+  resolution: "undici-types@npm:7.24.6"
+  checksum: e79802e37dc472c6324850d938b5df6b9e796f6a1bb5f8ccd24f3a6d17eae94a9cc125506c8b339a3293ffbad81daeba30b843e564c1d237b3c8deafd98b6267
+  languageName: node
+  linkType: hard
+
 "undici-types@npm:~5.26.4":
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.19.2":
-  version: 6.19.6
-  resolution: "undici-types@npm:6.19.6"
-  checksum: e66df2447b6d93a48b0605a54269d8c3f228edcd1e9563229f6de37e48ed53b3e49b4bc965733643ed9717e0e0fa1ee664c929db91d787c9f488fb3f9e17c533
   languageName: node
   linkType: hard
 
